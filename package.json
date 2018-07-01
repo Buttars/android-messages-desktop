@@ -37,7 +37,8 @@
       "target": [
         "deb",
         "AppImage",
-        "snap"
+        "snap",
+        "pacman"
       ]
     }
   },
@@ -50,6 +51,7 @@
     "test": "npm run unit && npm run e2e",
     "start": "node build/start.js",
     "release": "npm test && webpack --config=build/webpack.app.config.js --env=production && electron-builder -mwl",
+    "release:pacman": "npm test && webpack --config=build/webpack.app.config.js --env=production && electron-builder --linux pacman",
     "generate-icons": "png2icons assets/android_messages_desktop_icon.png resources/icon -all -i"
   },
   "dependencies": {
